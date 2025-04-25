@@ -7,7 +7,7 @@ int main (){
 
     printf( "Tabuleiro de Batalha Naval \n");
     printf("  "); // Espaço para o canto superior esquerdo
-    for (int i = 0; i < 10; i++){
+    for (int i = 0; i < 10; i++){ //
         printf(" %c ", linha[i]); // Imprime a primeira linha com letras A-J
 
     } for (int i = 0; i < 10; i++){ 
@@ -31,7 +31,7 @@ int main (){
     }
      
     // Criando posição do segundo navio na Vertical
-    int navio2I = 6; // Posição inicial do navio 2 na linha
+    int navio2I = 5; // Posição inicial do navio 2 na linha
     int navio2J = 3; // Posição inicial do navio 2 na coluna
     int MovimentoNavio2 = 3; // Tamanho do navio 2
 
@@ -55,5 +55,37 @@ int main (){
      }
     } printf("\n\n"); // Pula uma linha após imprimir o tabuleiro
 
+    // Criando posição do terceiro navio na Diagonal 
+    int navio3X = 0; // Posição inicial do navio 3 na linha
+    int navio3Y = 0; // Posição inicial do navio 3 na coluna
+    int MovimentoNavio3 = 3; // Tamanho do navio 3
+
+    for (int i = 0; i < MovimentoNavio3; i++){
+          tabuleiro[navio3X + i][navio3Y + i] = 3; // Marca a posição do navio 3 no tabuleiro
+    }
+
+     // Criando posição do quarto navio na Diagonal 
+    int navio4X = 0; // Posição inicial do navio 4 na linha
+    int navio4Y = 9; // Posição inicial do navio 4 na coluna
+    int MovimentoNavio4 = 3; // Tamanho do navio 4
+
+    for (int i = 0; i < MovimentoNavio4; i++){
+          tabuleiro[navio4X + i][navio4Y - i] = 3; // Marca a posição do navio 4 no tabuleiro
+    }
+
+        // Tabuleiro finaol com os 4 navios posicionados
+        printf("Tabuleiro de Batalha Naval com os 4 Navios Posicionados: \n"); // Exibe o tabuleiro com os navios posicionados
+        printf("  "); // Espaço para o canto superior esquerdo  
+       
+        for (int i = 0; i < 10; i++){
+         printf(" %c ", linha[i]); // Imprime a primeira linha com letras A-J
+    
+        } for (int i = 0; i < 10; i++){ 
+            printf("\n%d ", i);  // Imprime a primeira coluna com números 0-9
+        
+         for (int j = 0; j < 10; j++){ 
+            printf(" %d ", tabuleiro[i][j]); // Imprime o valor atual da célula
+         }
+        } printf("\n\n"); // Pula uma linha após imprimir o tabuleiro
 
 }
